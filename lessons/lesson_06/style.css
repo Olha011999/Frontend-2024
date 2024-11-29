@@ -1,0 +1,12 @@
+/* селектор для всех картинок внутри .animal-card  */
+.animal-card > img {
+  width: 300px;
+}
+
+/* селекторы для контейнера с данными по животному */
+.animal-card {
+  background-color: bisque;
+  width: 350px;
+  height: 250px;
+}
+
