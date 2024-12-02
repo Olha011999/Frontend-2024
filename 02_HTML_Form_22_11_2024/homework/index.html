@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="../homework/style.css">
+</head>
+<body>
+    <h3>Registration Form</h3>
+    <form>
+        <div>
+            <label for="email"> Email:</label>
+            <input
+            id="email"
+          type="email"
+          placeholder="Enter your email..."
+          required
+            />
+        </div>
+
+        <br/>
+
+        <div>
+            <label for="password"> Password:</label>
+            <input
+            id="password"
+          type="password"
+          placeholder="Enter your password..."
+          required
+            />
+        </div>
+
+        <br/>
+
+        <div>
+            <label for="phone"> Phone number:</label>
+            <input
+            id="phone"
+            title="Example: +1234567898765"
+          type="tel"
+          placeholder="Enter your phone number..."
+          pattern="\+[0-9]{13}"
+          required
+            />
+        </div>
+
+        <br />
+<h4> Filter</h4>
+
+        <div>
+          <label for="product">Choose a product:</label>
+          <select id="product" required>
+              <option value="">Choose a product:</option>
+              <option value="clothes">Clothes</option>
+              <option value="shoes">Shoes</option>
+              <option value="underwear">Underwear</option>
+              <option value="toys">Toys</option>
+          </select>
+        </div>
+
+        <br />
+
+        <div>
+          <label for="gender">Choose a gender:</label>
+          <select id="gender" required>
+              <option value="">Choose a gender:</option>
+              <option value="man">Man</option>
+              <option value="woman">Woman</option>
+              <option value="boy">Boy</option>
+              <option value="girl">Girl</option>
+          </select>
+        </div>
+  
+        <br/>
+        <button>Let's go</button>
+
+    </form>
+    
+</body>
+</html>
