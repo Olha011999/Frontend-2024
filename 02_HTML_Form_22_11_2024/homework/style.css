@@ -1,0 +1,65 @@
+/* Общий стиль для страницы */
+body{
+    background-color: rgb(193, 164, 251);
+    color: rgb(5, 5, 60);
+    padding: 20px;
+    margin: 0;
+}
+
+/* Заголовок */
+h3{
+    color: rgb(4, 4, 33);
+    text-align: center;
+}
+
+/* Заголовок фильтра */
+h4 {
+    color: rgb(4, 4, 33);
+    text-align: center;
+}
+
+/* Форма */
+form {
+    width: 70%;
+    max-width: 600px;
+    margin: 0 auto; 
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+}
+   
+   
+
+
+/* Див для полей формы */
+form div {
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+/* Метки */
+label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Поля ввода */
+input, select {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Кнопка */
+button {
+    width: 100%;
+    background: #ba6bad;
+    color: #160516;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    
+}
+

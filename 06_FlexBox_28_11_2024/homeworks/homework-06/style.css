@@ -1,0 +1,67 @@
+.lesson-container{
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    padding: 0px 30px;
+}
+
+h1{
+    color: coral;
+}
+
+a{
+    text-decoration:none;
+    color: black;
+}
+
+/* стили с псевдоклассом hover применятся к элементу при наведении на него мышкой */
+a:hover{
+    text-decoration: underline;
+    color: rgb(249, 119, 72);
+}
+
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url(https://chudo.tech/wp-content/uploads/2017/05/LG-OLED-W7V-obzor-televizora.jpg);
+    background-size: cover;
+    /* line-height: 1.6; */
+  }
+  
+  .header {
+    background-color: #8eb2f5;
+    padding: 10px 0;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .nav a:hover {
+    text-decoration: underline;
+  }
+  
+  main {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .welcome h1 {
+    margin-bottom: 20px;
+    color: #444;
+  }
+  
+  .welcome p {
+    font-size: 18px;
+    color: #555;
+  }
+  

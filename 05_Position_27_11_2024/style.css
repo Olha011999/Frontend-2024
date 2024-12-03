@@ -1,0 +1,60 @@
+/* Стиль для фона */
+.sky {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    background-image: url('./img/bg.jpg');
+    background-size: cover;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+.planet-1 {
+    position: absolute;
+    top: 90px;
+    left: 200px;
+    width: 100px;
+}
+
+.planet-2 {
+    position: absolute;
+    top: 130px;
+    left: 100px;
+    width: 130px;
+}
+
+.planet-3 {
+    position: absolute;
+    top: 190px;
+    left: 140px;
+    width: 200px;
+}
+
+.asteroid {
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    width: 60px;
+}
+
+.spaceship {
+    position: absolute;
+    top: 210px;
+    left: 140px;
+    width: 30px;
+}
+
+.ufo {
+    position: absolute;
+    bottom: 40px;
+    left: 100px;
+    width: 70px;
+}
+
+.superman {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    width: 50px;
+}
