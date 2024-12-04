@@ -95,7 +95,12 @@ header a{
     bottom: 54px;
     color: white;
     font-family: Arial, sans-serif;
-    font-size: 20px;       
+    font-size: 20px;
+    text-shadow:
+        -1px -1px 0 gray,
+        1px -1px 0 gray,
+        -1px  1px 0 gray,
+        1px  1px 0 gray;
     width: 100%;
 }
 
@@ -156,9 +161,11 @@ footer{
 
 .footer_box{
     display: flex;
-    padding-left: 58px;
+    margin: 0px 80px 25px 70px;
+    /* padding-left: 70px;
     margin-bottom: 25px;
-    gap: 32.8px;
+    margin-right: 80px;
+    width: 300px; */
 }
 
 .footer_links{
