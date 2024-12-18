@@ -44,7 +44,7 @@ async function fetchGeoData() {
 }
 
 async function fetchWeatherData(latitude, longitude) {
-    try {
+
         const res = await fetch(
             `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`
         );
@@ -61,9 +61,7 @@ async function fetchWeatherData(latitude, longitude) {
             `Weather: ${weatherDescription}`
         ]);
         weatherDataContainer.append(weatherCard);
-    } catch (error) {
-        console.error("Error fetching weather data:", error);
-    }
+    
 }
 
 function createCard(title, contentArray) {
