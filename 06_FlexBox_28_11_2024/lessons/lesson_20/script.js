@@ -28,41 +28,56 @@ const weatherDescriptions = {
 };
 
 async function fetchGeoData() {
-        const res = await fetch(`https://get.geojs.io/v1/ip/geo.json`);
-        const data = await res.json();
+    const res = await fetch(`https://get.geojs.io/v1/ip/geo.json`);
+    const data = await res.json();
 
-        const { latitude, longitude, city } = data;
+    console.log("Geo Data:", data); 
 
-        const geoCard = createCard("Your Geodata", [
-            `Latitude: ${latitude}`,
-            `Longitude: ${longitude}`,
-            `City: ${city}`
-        ]);
-        geoDataContainer.append(geoCard);
+    const { latitude, longitude, city } = data;
 
-        fetchWeatherData(latitude, longitude);
+    if (!latitude || !longitude || !city) {
+        console.error("Error: Geo data is incomplete");
+        return;
+    }
+
+    const geoCard = createCard("Your Geodata", [
+        `Latitude: ${latitude}`,
+        `Longitude: ${longitude}`,
+        `City: ${city}`
+    ]);
+    geoDataContainer.append(geoCard);
+
+    fetchWeatherData(latitude, longitude);
 }
+
 
 async function fetchWeatherData(latitude, longitude) {
+    const res = await fetch(
+        `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`
+    );
+    const weatherData = await res.json();
 
-        const res = await fetch(
-            `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`
-        );
-        const weatherData = await res.json();
-        const { current_weather, current_weather_units } = weatherData;
+    console.log("Weather Data:", weatherData); 
 
-        const { temperature, wind_speed, weathercode } = current_weather;
+    const { current_weather, current_weather_units } = weatherData;
 
-        const weatherDescription = weatherDescriptions[weathercode] || "Unknown weather";
+    if (!current_weather || !current_weather_units) {
+        console.error("Error: Weather data is incomplete");
+        return;
+    }
 
-        const weatherCard = createCard("Current Weather", [
-            `Temperature: ${temperature} ${current_weather_units.temperature}`,
-            `Wind Speed: ${wind_speed} ${current_weather_units.windspeed}`,
-            `Weather: ${weatherDescription}`
-        ]);
-        weatherDataContainer.append(weatherCard);
-    
+    const { temperature, wind_speed, weathercode } = current_weather;
+
+    const weatherDescription = weatherDescriptions[weathercode] || "Unknown weather";
+
+    const weatherCard = createCard("Current Weather", [
+        `Temperature: ${temperature} ${current_weather_units.temperature || "°C"}`,
+        `Wind Speed: ${wind_speed} ${current_weather_units.windspeed || "km/h"}`,
+        `Weather: ${weatherDescription}`
+    ]);
+    weatherDataContainer.append(weatherCard);
 }
+
 
 function createCard(title, contentArray) {
     const card = document.createElement("div");
