@@ -8,7 +8,7 @@ const input = document.querySelector('#character-id')
 
 function character(){
     const id = input.value;
-    fetch('https://rickandmortyapi.com/api/character/${id}')
+    fetch(`https://rickandmortyapi.com/api/character/${id}`)
     .then(res=> res.json())
     .then(data=>{
         img.src = data.image;
